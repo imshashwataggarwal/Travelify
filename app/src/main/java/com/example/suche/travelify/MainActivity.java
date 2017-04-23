@@ -11,9 +11,9 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 
 import com.example.suche.travelify.Adapter.FragmentAdapter;
+import com.example.suche.travelify.Notify.Constants;
 
 public class MainActivity extends AppCompatActivity {
-
     // Main Activity.
 
     @Override
@@ -25,7 +25,6 @@ public class MainActivity extends AppCompatActivity {
         final Intent intent = getIntent();
         if (intent.getBooleanExtra(Constants.IS_BEACON, false)) {
         }
-
 
         // Get runtime permissions for Android M
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
@@ -43,9 +42,7 @@ public class MainActivity extends AppCompatActivity {
                         Manifest.permission.ACCESS_COARSE_LOCATION,
                         Manifest.permission.VIBRATE,
                 }, 0);
-
             }
-
         }
         // Set ViewPager.
         ViewPager viewPager = (ViewPager) findViewById(R.id.viewpager);
@@ -54,8 +51,5 @@ public class MainActivity extends AppCompatActivity {
         // Set TabLayout.
         TabLayout tabLayout = (TabLayout) findViewById(R.id.panes);
         tabLayout.setupWithViewPager(viewPager);
-
-
     }
-
 }
