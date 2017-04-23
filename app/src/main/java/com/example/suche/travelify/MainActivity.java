@@ -14,6 +14,8 @@ import com.example.suche.travelify.Adapter.FragmentAdapter;
 
 public class MainActivity extends AppCompatActivity {
 
+    // Main Activity.
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
