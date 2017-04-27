@@ -21,6 +21,7 @@ import java.util.List;
 import java.util.UUID;
 
 import com.example.suche.travelify.MainActivity;
+import com.example.suche.travelify.R;
 
 public class MyApplication extends Application {
 
@@ -34,9 +35,7 @@ public class MyApplication extends Application {
         beaconManager.setMonitoringListener(new BeaconManager.MonitoringListener() {
             @Override
             public void onEnteredRegion(Region region, List<Beacon> list) {
-                showNotification(
-                        getResources().getString(R.string.app_name),
-                        "Attraction Nearby!", "Found an attraction nearby, Check in Travelify", list.get(0).getMajor(), list.get(0).getMinor(), list.get(0).getProximityUUID().toString());
+                showNotification("Attraction Nearby!", "Found an attraction nearby, Check in Travelify", list.get(0).getMajor(), list.get(0).getMinor(), list.get(0).getProximityUUID().toString());
             }
 
             @Override
