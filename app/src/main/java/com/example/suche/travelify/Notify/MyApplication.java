@@ -24,7 +24,7 @@ public class MyApplication extends Application {
         super.onCreate();
     }
 
-    public void showNotification(String title, String message, int major, int minor, String uid) {
+    public void showNotification(String title, String message) {
         // Show Notification.
         Intent notifyIntent = new Intent(this, MainActivity.class);
         notifyIntent.putExtra(Constants.IS_BEACON, true);
@@ -33,8 +33,8 @@ public class MyApplication extends Application {
 
         Notification notification = new Notification.Builder(this)
                 .setSmallIcon(android.R.drawable.ic_dialog_info)
-                .setContentTitle(title)
-                .setContentText(message)
+                .setContentTitle("Attraction Nearby!")
+                .setContentText("Found an attraction nearby, Check in Travelify")
                 .setAutoCancel(true)
                 .setContentIntent(pendingIntent)
                 .build();
