@@ -81,7 +81,9 @@ public class DetailActivity extends AppCompatActivity implements android.support
 
         viewHolder.image        = (RecyclerView) findViewById(R.id.imagelistView);
         viewHolder.reviews      = (RecyclerView) findViewById(R.id.reviewlistView);
-
+        
+        viewHolder.reviews.setNestedScrollingEnabled(false);
+        
         viewHolder.title        = (TextView) findViewById(R.id.titleTextView);
         viewHolder.address      = (TextView) findViewById(R.id.addressTextView);
         viewHolder.schedule     = (TextView) findViewById(R.id.scheduleTextView);
@@ -136,6 +138,9 @@ public class DetailActivity extends AppCompatActivity implements android.support
             }
 
         };
+
+        viewHolder.reviews.setNestedScrollingEnabled(false);
+
         viewHolder.reviews.setLayoutManager(layoutManager2);
         viewHolder.reviews.setAdapter(adapterREV);
 
