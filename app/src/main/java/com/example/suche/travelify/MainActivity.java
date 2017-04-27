@@ -13,9 +13,22 @@ import android.support.v7.app.AppCompatActivity;
 import com.example.suche.travelify.Adapter.FragmentAdapter;
 import com.example.suche.travelify.Notify.Constants;
 
+import com.estimote.sdk.Beacon;
+import com.estimote.sdk.BeaconManager;
+import com.estimote.sdk.Region;
+
+import java.util.List;
+import java.util.UUID;
+
+
 public class MainActivity extends AppCompatActivity {
     // Main Activity.
-
+    
+    Boolean discovered = false;
+    String  beaconmajor;
+    private BeaconManager beaconManager;
+    private Region region;
+    
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,6 +39,29 @@ public class MainActivity extends AppCompatActivity {
         if (intent.getBooleanExtra(Constants.IS_BEACON, false)) {
         }
 
+         // Start beacon ranging
+        beaconManager = new BeaconManager(this);
+        region = new Region("Minion region", UUID.fromString(Constants.UID), null, null);
+
+        beaconManager.connect(new BeaconManager.ServiceReadyCallback() {
+            @Override
+            public void onServiceReady() {
+                beaconManager.startRanging(region);
+            }
+        });
+
+        beaconManager.setRangingListener(new BeaconManager.RangingListener() {
+            @Override
+            public void onBeaconsDiscovered(Region region, List<Beacon> list) {
+                if (!discovered && list.size() > 0) {
+                    Beacon nearestBeacon = list.get(0);
+                    beaconmajor = Integer.toString(nearestBeacon.getMajor());
+                    Log.e("Discovered", "Nearest places: " + nearestBeacon.getMajor());
+                    discovered = true;               
+                }
+            }
+        });
+        
         // Get runtime permissions for Android M
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             if (ContextCompat.checkSelfPermission(MainActivity.this,
