@@ -12,7 +12,14 @@ import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 
+
+import com.estimote.sdk.Beacon;
 import com.estimote.sdk.BeaconManager;
+import com.estimote.sdk.Region;
+
+import java.util.List;
+import java.util.UUID;
+
 import com.example.suche.travelify.MainActivity;
 
 public class MyApplication extends Application {
@@ -22,9 +29,35 @@ public class MyApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+        
+        beaconManager = new BeaconManager(getApplicationContext());
+        beaconManager.setMonitoringListener(new BeaconManager.MonitoringListener() {
+            @Override
+            public void onEnteredRegion(Region region, List<Beacon> list) {
+                showNotification(
+                        getResources().getString(R.string.app_name),
+                        "Attraction Nearby!", "Found an attraction nearby, Check in Travelify", list.get(0).getMajor(), list.get(0).getMinor(), list.get(0).getProximityUUID().toString());
+            }
+
+            @Override
+            public void onExitedRegion(Region region) {
+                showNotification(
+                        "Good Bye!", "Hope to see you again :D", region.getMajor(), region.getMinor(), region.getProximityUUID().toString());
+            }
+        });
+
+        beaconManager.connect(new BeaconManager.ServiceReadyCallback() {
+            @Override
+            public void onServiceReady() {
+                beaconManager.startMonitoring(new Region("monitored region",UUID.fromString(Constants.UID),
+                        Constants.major, Constants.minor));
+            }
+
+        });
+
     }
 
-    public void showNotification(String title, String message) {
+    public void showNotification(String title, String message, int major, int minor, String uid) {
         // Show Notification.
         Intent notifyIntent = new Intent(this, MainActivity.class);
         notifyIntent.putExtra(Constants.IS_BEACON, true);
@@ -33,8 +66,8 @@ public class MyApplication extends Application {
 
         Notification notification = new Notification.Builder(this)
                 .setSmallIcon(android.R.drawable.ic_dialog_info)
-                .setContentTitle("Attraction Nearby!")
-                .setContentText("Found an attraction nearby, Check in Travelify")
+                .setContentTitle(title)
+                .setContentText(message)
                 .setAutoCancel(true)
                 .setContentIntent(pendingIntent)
                 .build();
