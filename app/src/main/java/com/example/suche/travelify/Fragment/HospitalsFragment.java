@@ -32,14 +32,15 @@ import java.util.List;
 
 public class HospitalsFragment extends Fragment implements android.support.v4.app.LoaderManager.LoaderCallbacks<List<BasicLocation>>{
 
-    private static final int LocationLoader_ID = 3;
+    private static final int LocationLoader_ID = 10;
     private LocationAdapter adapter;
     private String LOG_TAG;
+    private ImageView mEmptyStateTextView;
+    private  View rootView;
     public HospitalsFragment(){
         // empty public constructor.
     }
-    private ImageView mEmptyStateTextView;
-    private  View rootView;
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -109,7 +110,7 @@ public class HospitalsFragment extends Fragment implements android.support.v4.ap
     //Loader methods override
     @Override
     public android.support.v4.content.Loader<List<BasicLocation>> onCreateLoader(int id, Bundle args) {
-        return new LocationLoader(getContext(), 3);
+        return new LocationLoader(getContext(), 9);
     }
 
     @Override

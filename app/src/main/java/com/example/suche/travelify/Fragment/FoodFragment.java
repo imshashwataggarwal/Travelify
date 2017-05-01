@@ -32,16 +32,14 @@ import java.util.List;
 
 public class FoodFragment extends Fragment implements android.support.v4.app.LoaderManager.LoaderCallbacks<List<BasicLocation>>{
 
-    private static final int LocationLoader_ID = 2;
+    private static final int LocationLoader_ID = 4;
     private LocationAdapter adapter;
     private String LOG_TAG;
-
+    private ImageView mEmptyStateTextView;
+    private  View rootView;
     public FoodFragment() {
         // empty public constructor.
     }
-
-    private ImageView mEmptyStateTextView;
-    private  View rootView;
 
     @Nullable
     @Override
@@ -109,7 +107,7 @@ public class FoodFragment extends Fragment implements android.support.v4.app.Loa
     //Loader methods override
     @Override
     public android.support.v4.content.Loader<List<BasicLocation>> onCreateLoader(int id, Bundle args) {
-        return new LocationLoader(getContext(), 1);
+        return new LocationLoader(getContext(), 3);
     }
 
     @Override

@@ -11,19 +11,22 @@ import com.example.suche.travelify.StartScreen;
 public class UrlUtils {
 
     private static final String LOG_TAG = UrlUtils.class.getSimpleName();
+    //private static final String BASE_URL = "https://maps.googleapis.com/maps/api/place/nearbysearch/json";
+    private static final String BASE_URL = "https://maps.googleapis.com/maps/api/place/textsearch/json";
+    private static final String DETAIL_URL = "https://maps.googleapis.com/maps/api/place/details/json";
+    //private static String key = "AIzaSyChQ-8VvW6H9rOlXA4o7mhunVdsTfkM9UY";  //agg
+    private static String key = "AIzaSyDiBvamlXvfV-8x3JBEwq9pyZYd5sbkGW8";  //uttam
+    private static String radius = "10000";
+    //types
+    private static String[] types = {   "attractions","shopping_malls", "hindu_temple",
+                                        "restaurants", "park", "museum", "movie_theater", "zoo",
+                                        "atm",  "hospitals",
+                                        "airport", "train_station", "taxi_stand"
+                                    };
 
     private UrlUtils(){
     }
 
-    private static String key = "AIzaSyChQ-8VvW6H9rOlXA4o7mhunVdsTfkM9UY";  //agg
-    //private static String key = "AIzaSyDiBvamlXvfV-8x3JBEwq9pyZYd5sbkGW8";  //uttam
-    //private static final String BASE_URL = "https://maps.googleapis.com/maps/api/place/nearbysearch/json";
-    private static final String BASE_URL = "https://maps.googleapis.com/maps/api/place/textsearch/json";
-    private static final String DETAIL_URL = "https://maps.googleapis.com/maps/api/place/details/json";
-    private static String radius = "10000";
-
-    //types
-    private static String[] types = {"attractions","restaurants","shopping_malls","hospitals"};
     public static String createUrl(int type){
 
         String placename;

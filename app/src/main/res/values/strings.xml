@@ -10,14 +10,26 @@
     <string name="open_google_maps">Open in Google Maps</string>
 
     <!-- =============== Tab Names =================== -->
-    <!-- Category name for SightSeeing [CHAR LIMIT=20] -->
     <string name="category_sightseeing">Sights</string>
-    <!-- Category name for Food [CHAR LIMIT=20] -->
     <string name="category_food">Foods</string>
-    <!-- Category name for Attraction [CHAR LIMIT=20] -->
     <string name="category_attractions">Shops</string>
-    <!-- Category name for Hospitals [CHAR LIMIT=20] -->
     <string name="category_hospitals">Hospitals</string>
+    <string name="category_temple">Temples</string>
+    <string name="category_park">Parks</string>
+    <string name="category_museum">Museums</string>
+    <string name="category_movie">Movie Theaters</string>
+    <string name="category_zoo">Zoo</string>
+    <string name="category_academic">Academic</string>
+    <string name="category_embassy">Embassy</string>
+    <string name="category_library">Library</string>
+    <string name="category_airport">Airports</string>
+    <string name="category_train">Railway Stations</string>
+    <string name="category_taxi">Taxi Stands</string>
+    <string name="category_atm">ATMs</string>
+    <string name="category_gas">Gas Stations</string>
+    <string name="category_police">Police Stations</string>
+    <string name="category_school">Schools</string>
+
 
     <string name="open">Open Now</string>
     <string name="closed">Closed Now</string>

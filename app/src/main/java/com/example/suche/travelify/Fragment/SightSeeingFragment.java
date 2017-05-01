@@ -34,7 +34,7 @@ import java.util.List;
 
 public class SightSeeingFragment extends Fragment implements android.support.v4.app.LoaderManager.LoaderCallbacks<List<BasicLocation>>{
 
-    private static final int LocationLoader_ID = 4;
+    private static final int LocationLoader_ID = 1;
     private LocationAdapter adapter;
     private ImageView mEmptyStateTextView;
     private  View rootView;

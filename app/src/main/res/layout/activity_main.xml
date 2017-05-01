@@ -16,7 +16,8 @@
         style="@style/tabs"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:tabMaxWidth="0dp"  />
+        app:tabMaxWidth="0dp"
+        app:tabMode="scrollable"/>
 
 
     <!-- View Pager - Fragment -->
