@@ -57,9 +57,9 @@ public class AttractionsFragment extends Fragment implements android.support.v4.
         ListView listView = (ListView) rootView.findViewById(R.id.listView);
 
         mEmptyStateTextView = (ImageView) rootView.findViewById(R.id.empty_view);
+        mEmptyStateTextView.setImageResource(R.drawable.noconnection);
         mEmptyStateTextView.setVisibility(View.GONE);
-
-        listView.setEmptyView(mEmptyStateTextView);
+        //listView.setEmptyView(mEmptyStateTextView);
 
         listView.setAdapter(adapter);
 
@@ -90,6 +90,7 @@ public class AttractionsFragment extends Fragment implements android.support.v4.
             // Error
             View loadingIndicator = rootView.findViewById(R.id.loading_indicator);
             loadingIndicator.setVisibility(View.GONE);
+            //mEmptyStateTextView.setImageResource(R.drawable.noconnection);
             mEmptyStateTextView.setVisibility(View.VISIBLE);
         }
 
@@ -152,6 +153,7 @@ public class AttractionsFragment extends Fragment implements android.support.v4.
             // Error
             View loadingIndicator = rootView.findViewById(R.id.loading_indicator);
             loadingIndicator.setVisibility(View.GONE);
+            //mEmptyStateTextView.setImageResource(R.drawable.noconnection);
             mEmptyStateTextView.setVisibility(View.VISIBLE);
         }
     }

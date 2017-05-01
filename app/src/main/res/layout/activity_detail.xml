@@ -56,6 +56,7 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_alignParentEnd="true"
+                                    android:layout_centerVertical="true"
                                     android:numStars="5" />
                                 <TextView
                                     android:id="@+id/titleTextView"
@@ -117,6 +118,7 @@
                                     style="@style/Location_Address_Schedule_Price_Phone"
                                     android:autoLink="phone"
                                     android:paddingEnd="10dp"
+                                    android:drawableStart="@drawable/ic_language_black_24dp"
                                     android:paddingStart="20dp"/>
 
                                 </LinearLayout>
@@ -168,7 +170,7 @@
     android:adjustViewBounds="true"
     android:contentDescription="@string/image_view_place"
         android:scaleType="centerCrop"
-        android:src="@drawable/noconnection" />
+        android:src="@drawable/nores" />
 
     <!-- Loading indicator for user feedback -->
     <ProgressBar
@@ -187,7 +189,7 @@
         android:layout_gravity="bottom|end"
         android:layout_margin="20dp"
         android:background="@color/common_google_signin_btn_text_dark_default"
-        android:scaleType="centerCrop"
         android:src="@drawable/map"
+        android:scaleType="centerCrop"
         />
 </merge>

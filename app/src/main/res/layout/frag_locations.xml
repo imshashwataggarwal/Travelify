@@ -34,8 +34,7 @@
         android:layout_alignParentTop="true"
         android:adjustViewBounds="true"
         android:contentDescription="@string/image_view_place"
-        android:scaleType="centerCrop"
-        android:src="@drawable/nores" />
+        android:scaleType="centerCrop" />
 
     <!-- Loading indicator for user feedback -->
     <ProgressBar

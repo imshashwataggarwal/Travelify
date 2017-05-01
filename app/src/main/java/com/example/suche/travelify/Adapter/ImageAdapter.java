@@ -27,6 +27,8 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ViewHolder> 
     private static final String LOG_TAG = ImageAdapter.class.getSimpleName();
     private List<PlaceImage> mrev;
     private String BASE_URL = "https://maps.googleapis.com/maps/api/place/photo";
+    private static String key = "AIzaSyChQ-8VvW6H9rOlXA4o7mhunVdsTfkM9UY";  //agg
+    //private static String key = "AIzaSyDiBvamlXvfV-8x3JBEwq9pyZYd5sbkGW8";  //uttam
     private Context mcontext;
 
     // View lookup cache
@@ -59,19 +61,19 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ViewHolder> 
         PlaceImage temp = mrev.get(position);
         if(temp.hasImageRef()) {
             int width = temp.getImageWidth();
-            if (width > 600)
-                width = 600;
+            if (width > 1000)
+                width = 1000;
 
             Uri baseuri = Uri.parse(BASE_URL);
             Uri.Builder uribuilder = baseuri.buildUpon();
             uribuilder.appendQueryParameter("photoreference", temp.getImageRef());
             uribuilder.appendQueryParameter("maxwidth", Integer.toString(width));
-            uribuilder.appendQueryParameter("key", "AIzaSyChQ-8VvW6H9rOlXA4o7mhunVdsTfkM9UY");
+            uribuilder.appendQueryParameter("key", key);
             //url made
             String url = uribuilder.toString();
             Picasso.with(mcontext)
                     .load(url)
-                    .resize(600, 600)
+                    .resize(1000,1000)
                     .centerCrop()
                     .into(holder.image);
         }

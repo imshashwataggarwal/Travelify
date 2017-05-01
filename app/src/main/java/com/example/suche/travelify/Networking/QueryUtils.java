@@ -37,8 +37,8 @@ public final class QueryUtils {
      */
     private static final String LOG_TAG = QueryUtils.class.getSimpleName();
     private static final String GPS_BASE_URL = "https://maps.googleapis.com/maps/api/geocode/json";
-    //private static String key = "AIzaSyChQ-8VvW6H9rOlXA4o7mhunVdsTfkM9UY";  //agg
-    private static String key = "AIzaSyDiBvamlXvfV-8x3JBEwq9pyZYd5sbkGW8";  //uttam
+    private static String key = "AIzaSyChQ-8VvW6H9rOlXA4o7mhunVdsTfkM9UY";  //agg
+    //private static String key = "AIzaSyDiBvamlXvfV-8x3JBEwq9pyZYd5sbkGW8";  //uttam
 
     private QueryUtils() {
     }

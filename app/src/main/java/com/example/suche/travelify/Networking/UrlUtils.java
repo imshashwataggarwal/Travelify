@@ -15,8 +15,8 @@ public class UrlUtils {
     private UrlUtils(){
     }
 
-    //private static String key = "AIzaSyChQ-8VvW6H9rOlXA4o7mhunVdsTfkM9UY";  //agg
-    private static String key = "AIzaSyDiBvamlXvfV-8x3JBEwq9pyZYd5sbkGW8";  //uttam
+    private static String key = "AIzaSyChQ-8VvW6H9rOlXA4o7mhunVdsTfkM9UY";  //agg
+    //private static String key = "AIzaSyDiBvamlXvfV-8x3JBEwq9pyZYd5sbkGW8";  //uttam
     //private static final String BASE_URL = "https://maps.googleapis.com/maps/api/place/nearbysearch/json";
     private static final String BASE_URL = "https://maps.googleapis.com/maps/api/place/textsearch/json";
     private static final String DETAIL_URL = "https://maps.googleapis.com/maps/api/place/details/json";

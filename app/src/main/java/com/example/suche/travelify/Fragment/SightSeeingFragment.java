@@ -58,8 +58,9 @@ public class SightSeeingFragment extends Fragment implements android.support.v4.
         // Attach Adapter to List View.
         ListView listView = (ListView) rootView.findViewById(R.id.listView);
         mEmptyStateTextView = (ImageView) rootView.findViewById(R.id.empty_view);
+        mEmptyStateTextView.setImageResource(R.drawable.noconnection);
         mEmptyStateTextView.setVisibility(View.GONE);
-        listView.setEmptyView(mEmptyStateTextView);
+        //listView.setEmptyView(mEmptyStateTextView);
         listView.setAdapter(adapter);
 
 

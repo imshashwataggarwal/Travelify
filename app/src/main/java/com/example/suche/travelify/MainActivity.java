@@ -35,7 +35,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
         final Intent intent = getIntent();
         if (intent.getBooleanExtra(Constants.IS_BEACON, false)) {
         }
@@ -73,7 +72,7 @@ public class MainActivity extends AppCompatActivity {
                         Manifest.permission.BLUETOOTH_ADMIN,
                         Manifest.permission.READ_PHONE_STATE,
                         Manifest.permission.WAKE_LOCK,
-                        Manifest.permission.INTERNET,
+                        //Manifest.permission.INTERNET,
                         Manifest.permission.ACCESS_NETWORK_STATE,
                         Manifest.permission.ACCESS_FINE_LOCATION,
                         Manifest.permission.ACCESS_COARSE_LOCATION,

@@ -11,6 +11,7 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutCompat;
 import android.text.Html;
 import android.text.Spanned;
 import android.text.TextUtils;
@@ -18,6 +19,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -82,7 +84,7 @@ public class StartScreen extends AppCompatActivity implements GoogleApiClient.Co
         autocompleteFragment.setOnPlaceSelectedListener(this);
 
 
-        final Button gotomain = (Button) findViewById(R.id.gotomain);
+        final LinearLayout gotomain = (LinearLayout) findViewById(R.id.gotomain);
         gotomain.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 // Perform action on click

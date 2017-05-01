@@ -3,6 +3,7 @@ package com.example.suche.travelify.Detail;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.Uri;
@@ -248,9 +249,11 @@ public class DetailActivity extends AppCompatActivity implements android.support
 
         if(place.isopen()){
             viewHolder.schedule.setText(R.string.open);
+            viewHolder.schedule.setTextColor(Color.GREEN);
         }
         else{
             viewHolder.schedule.setText(R.string.closed);
+            viewHolder.schedule.setTextColor(Color.RED);
         }
         int x = place.getPrice();
         if(x > 4) x = 4;
