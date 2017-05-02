@@ -6,7 +6,6 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.util.Log;
@@ -107,7 +106,7 @@ public class FoodFragment extends Fragment implements android.support.v4.app.Loa
     //Loader methods override
     @Override
     public android.support.v4.content.Loader<List<BasicLocation>> onCreateLoader(int id, Bundle args) {
-        return new LocationLoader(getContext(), 3);
+        return new LocationLoader(getContext(),2,0);
     }
 
     @Override

@@ -16,11 +16,12 @@ import java.util.List;
 public class LocationLoader extends AsyncTaskLoader<List<BasicLocation>> {
 
     private String url;
-    private int type;
+    private int typemain,type;
 
-    public LocationLoader(Context context, int a){
+    public LocationLoader(Context context, int a,int b){
         super(context);
-        type = a;
+        typemain = a;
+        type = b;
     }
 
     @Override
@@ -30,7 +31,7 @@ public class LocationLoader extends AsyncTaskLoader<List<BasicLocation>> {
 
     @Override
     public List<BasicLocation> loadInBackground() {
-        url = UrlUtils.createUrl(type);
+        url = UrlUtils.createUrl(typemain,type);
         if(url==null)
             return null;
         List<BasicLocation> locations = QueryUtils.fetchLocationdata(url);

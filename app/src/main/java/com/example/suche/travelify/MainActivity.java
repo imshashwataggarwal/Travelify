@@ -29,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
     String  beaconmajor;
     private BeaconManager beaconManager;
     private Region region;
+    private int type;
     
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
         final Intent intent = getIntent();
         if (intent.getBooleanExtra(Constants.IS_BEACON, false)) {
         }
+        type = intent.getIntExtra("TYPE",0);
 
          // Start beacon ranging
         beaconManager = new BeaconManager(this);
@@ -82,7 +84,7 @@ public class MainActivity extends AppCompatActivity {
         }
         // Set ViewPager.
         ViewPager viewPager = (ViewPager) findViewById(R.id.viewpager);
-        viewPager.setAdapter(new FragmentAdapter(getSupportFragmentManager(),this));
+        viewPager.setAdapter(new FragmentAdapter(getSupportFragmentManager(),this,type));
 
         // Set TabLayout.
         TabLayout tabLayout = (TabLayout) findViewById(R.id.panes);

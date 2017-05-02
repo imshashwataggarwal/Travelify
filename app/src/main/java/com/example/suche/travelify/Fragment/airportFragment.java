@@ -1,9 +1,11 @@
 package com.example.suche.travelify.Fragment;
 
+import android.content.Context;
 import android.content.Intent;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.util.Log;
@@ -13,9 +15,6 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.ListView;
-import android.content.Context;
-import android.net.ConnectivityManager;
-import android.net.NetworkInfo;
 
 import com.example.suche.travelify.Adapter.LocationAdapter;
 import com.example.suche.travelify.Detail.DetailActivity;
@@ -112,7 +111,7 @@ public class airportFragment extends Fragment implements android.support.v4.app.
     //Loader methods override
     @Override
     public android.support.v4.content.Loader<List<BasicLocation>> onCreateLoader(int id, Bundle args) {
-        return new LocationLoader(getContext(), 10);
+        return new LocationLoader(getContext(),4,0);
     }
 
     @Override

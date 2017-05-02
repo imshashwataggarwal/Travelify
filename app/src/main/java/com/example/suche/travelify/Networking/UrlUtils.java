@@ -18,16 +18,16 @@ public class UrlUtils {
     private static String key = "AIzaSyDiBvamlXvfV-8x3JBEwq9pyZYd5sbkGW8";  //uttam
     private static String radius = "10000";
     //types
-    private static String[] types = {   "attractions","shopping_malls", "hindu_temple",
-                                        "restaurants", "park", "museum", "movie_theater", "zoo",
-                                        "atm",  "hospitals",
-                                        "airport", "train_station", "taxi_stand"
-                                    };
+    private static String[] types1 = {"attractions","shopping_malls", "hindu_temple"};
+    private static String[] types2 = {"restaurants", "park", "museum", "movie_theater", "zoo"};
+    private static String[] types3 = {"atm",  "hospitals"};
+    private static String[] types4 = {"airport", "train_station", "taxi_stand"};
+
 
     private UrlUtils(){
     }
 
-    public static String createUrl(int type){
+    public static String createUrl(int typemain,int type){
 
         String placename;
         if(StartScreen.usegps==1){
@@ -43,7 +43,18 @@ public class UrlUtils {
 
         Uri baseuri = Uri.parse(BASE_URL);
         Uri.Builder uribuilder = baseuri.buildUpon();
-        uribuilder.appendQueryParameter("query",types[type]+" in "+placename);
+        if(typemain==1){
+            uribuilder.appendQueryParameter("query",types1[type]+" in "+placename);
+        }
+        if(typemain==2){
+            uribuilder.appendQueryParameter("query",types2[type]+" in "+placename);
+        }
+        if(typemain==3){
+            uribuilder.appendQueryParameter("query",types3[type]+" in "+placename);
+        }
+        if(typemain==4){
+            uribuilder.appendQueryParameter("query",types4[type]+" in "+placename);
+        }
         uribuilder.appendQueryParameter("key",key);
 
         return uribuilder.toString();
