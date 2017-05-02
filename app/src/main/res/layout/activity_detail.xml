@@ -16,7 +16,7 @@
         android:id="@+id/scrollViewMain"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/cardview_dark_background"
+        android:background="#1a237e"
         android:orientation="vertical">
 
         <!-- Card Viewer -->
@@ -117,8 +117,8 @@
                                     android:id="@+id/websiteTextView"
                                     style="@style/Location_Address_Schedule_Price_Phone"
                                     android:autoLink="phone"
-                                    android:paddingEnd="10dp"
                                     android:drawableStart="@drawable/ic_language_black_24dp"
+                                    android:paddingEnd="10dp"
                                     android:paddingStart="20dp"/>
 
                                 </LinearLayout>
@@ -189,7 +189,7 @@
         android:layout_gravity="bottom|end"
         android:layout_margin="20dp"
         android:background="@color/common_google_signin_btn_text_dark_default"
+        android:scaleType="fitCenter"
         android:src="@drawable/map"
-        android:scaleType="centerCrop"
         />
 </merge>

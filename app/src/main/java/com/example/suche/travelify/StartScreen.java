@@ -45,7 +45,7 @@ public class StartScreen extends AppCompatActivity implements GoogleApiClient.Co
     final int MY_PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION = 1;
     private GoogleApiClient mGoogleApiClient;
     private Location mLastLocation;
-
+    private ImageView gpsbutton;
     // Helper method to format information about a place nicely.
     private static Spanned formatPlaceDetails(Resources res, CharSequence name, String id,
                                               CharSequence address, CharSequence phoneNumber, Uri websiteUri) {
@@ -87,7 +87,7 @@ public class StartScreen extends AppCompatActivity implements GoogleApiClient.Co
             }
         });
 
-        final ImageView gpsbutton = (ImageView) findViewById(R.id.GPSButtonView);
+        gpsbutton = (ImageView) findViewById(R.id.GPSButtonView);
         gpsbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -185,6 +185,8 @@ public class StartScreen extends AppCompatActivity implements GoogleApiClient.Co
 
         //set value of parameters
         placename = (String) place.getName();
+        usegps = 0;
+        gpsbutton.setColorFilter(ContextCompat.getColor(StartScreen.this,R.color.black));
     }
 
     //Callback invoked when PlaceAutocompleteFragment encounters an error.

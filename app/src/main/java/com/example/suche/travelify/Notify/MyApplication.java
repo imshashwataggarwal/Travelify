@@ -11,6 +11,7 @@ import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.BitmapFactory;
 
 
 import com.estimote.sdk.Beacon;
@@ -30,7 +31,7 @@ public class MyApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        
+
         beaconManager = new BeaconManager(getApplicationContext());
         beaconManager.setMonitoringListener(new BeaconManager.MonitoringListener() {
             @Override
@@ -54,6 +55,7 @@ public class MyApplication extends Application {
 
         });
 
+
     }
 
     public void showNotification(String title, String message, int major, int minor, String uid) {
@@ -64,7 +66,9 @@ public class MyApplication extends Application {
         PendingIntent pendingIntent = PendingIntent.getActivities(this, 0, new Intent[]{notifyIntent}, PendingIntent.FLAG_UPDATE_CURRENT);
 
         Notification notification = new Notification.Builder(this)
-                .setSmallIcon(android.R.drawable.ic_dialog_info)
+                .setSmallIcon(R.mipmap.ic_launcher)
+                .setLargeIcon(BitmapFactory.decodeResource(getResources(),
+                        R.mipmap.ic_launcher))
                 .setContentTitle(title)
                 .setContentText(message)
                 .setAutoCancel(true)
@@ -74,7 +78,7 @@ public class MyApplication extends Application {
         notification.defaults |= Notification.DEFAULT_SOUND;
         notification.defaults |= Notification.DEFAULT_VIBRATE;
         NotificationManager notificationManager =  (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
-        notificationManager.notify(1, notification);
+        notificationManager.notify(0, notification);
     }
 
 }
